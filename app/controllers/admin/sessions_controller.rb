@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
+  layout 'admin'
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -24,7 +25,7 @@ class Admin::SessionsController < Devise::SessionsController
     admin_dashboards_path # ログイン後にリダイレクトするパス
   end
 
-   def after_sign_out_path_for(resource_or_scope)
+  def after_sign_out_path_for(resource_or_scope)
     new_admin_session_path # ログアウト後にリダイレクトするパス
   end
   
